@@ -19,7 +19,7 @@ class TransPerm
      */
     private static $endpoints = [
         'route-types-tree'          => 'http://www.map.gortransperm.ru/json/route-types-tree/%s/',
-        'full-route'                => 'http://www.map.gortransperm.ru/json/full-route/%s/%d/',
+        'full-route'                => 'http://www.map.gortransperm.ru/json/full-route/%s/%s/',
         'stoppoint-routes'          => 'http://www.map.gortransperm.ru/json/stoppoint-routes/%s/%d',
         'arrival-times-vehicles'    => 'http://www.map.gortransperm.ru/json/arrival-times-vehicles/%d?_=%s',
         'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%d?_=%s',
@@ -36,6 +36,18 @@ class TransPerm
     public static function getRouteTypesTree(string $date)
     {
         return self::query(vsprintf(self::$endpoints['route-types-tree'], [$date]));
+    }
+
+    /**
+     * Вид транспорта
+     *
+     * @param string $date
+     * @param string $routeId
+     * @return array
+     */
+    public static function getFullRoute(string $date, string $routeId)
+    {
+        return self::query(vsprintf(self::$endpoints['full-route'], [$date, $routeId]));
     }
 
     /**
