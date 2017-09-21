@@ -99,6 +99,11 @@ public static function search(string $query)
 ---------|-----|----------------------
 $query | string | Поисковой запрос
 
+### Новости
+```php
+public static function getNews()
+```
+
 ## Автор
 [Alexander Pushkarev](https://github.com/axp-dev), e-mail: [axp-dev@yandex.com](mailto:axp-dev@yandex.com)
 

@@ -25,7 +25,8 @@ class TransPerm
         'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%s/%s?_=%s',
         'time-table-h'              => 'http://www.map.gortransperm.ru/json/time-table-h/%s/%s/%s',
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
-        'get-moving-autos'          => 'http://www.map.gortransperm.ru/json/get-moving-autos/-%s-?_=%s'
+        'get-moving-autos'          => 'http://www.map.gortransperm.ru/json/get-moving-autos/-%s-?_=%s',
+        'news-links'                => 'http://www.map.gortransperm.ru/json/news-links?_=%s',
     ];
 
     /**
@@ -119,6 +120,16 @@ class TransPerm
     public static function getMovingAutos(string $routeId)
     {
         return self::query(vsprintf(self::$endpoints['get-moving-autos'], [$routeId, time()]));
+    }
+
+    /**
+     * Новости
+     *
+     * @return array
+     */
+    public static function getNews()
+    {
+        return self::query(vsprintf(self::$endpoints['news-links'], [time()]));
     }
 
     /**
