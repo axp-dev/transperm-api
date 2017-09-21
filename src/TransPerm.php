@@ -25,6 +25,7 @@ class TransPerm
         'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%s/%s?_=%s',
         'time-table-h'              => 'http://www.map.gortransperm.ru/json/time-table-h/%s/%s/%s',
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
+        'get-moving-autos'          => 'http://www.map.gortransperm.ru/json/get-moving-autos/-%s-?_=%s'
     ];
 
     /**
@@ -107,6 +108,17 @@ class TransPerm
     public static function search(string $query)
     {
         return self::query(vsprintf(self::$endpoints['search'], [$query]));
+    }
+
+    /**
+     * Онлайн расписание транспорта
+     *
+     * @param string $routeId
+     * @return array
+     */
+    public static function getMovingAutos(string $routeId)
+    {
+        return self::query(vsprintf(self::$endpoints['get-moving-autos'], [$routeId, time()]));
     }
 
     /**
