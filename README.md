@@ -1,4 +1,8 @@
 # Transport Perm API
+[![Latest Stable Version](https://poser.pugx.org/axp-dev/transperm-api/v/stable)](https://packagist.org/packages/axp-dev/transperm-api)
+[![Latest Unstable Version](https://poser.pugx.org/axp-dev/transperm-api/v/unstable)](https://packagist.org/packages/axp-dev/transperm-api)
+[![License](https://poser.pugx.org/axp-dev/transperm-api/license)](https://packagist.org/packages/axp-dev/transperm-api)
+
 PHP библиотека для получения расписания транспорта г. Перми.
 
 ## Оглавление
