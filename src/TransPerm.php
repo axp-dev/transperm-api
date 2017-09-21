@@ -22,7 +22,7 @@ class TransPerm
         'full-route'                => 'http://www.map.gortransperm.ru/json/full-route/%s/%s/',
         'stoppoint-routes'          => 'http://www.map.gortransperm.ru/json/stoppoint-routes/%s/%s',
         'arrival-times-vehicles'    => 'http://www.map.gortransperm.ru/json/arrival-times-vehicles/%s?_=%s',
-        'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%s?_=%s',
+        'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%s/%s?_=%s',
         'time-table-h'              => 'http://www.map.gortransperm.ru/json/time-table-h/%s/%s/%s',
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
     ];
@@ -71,6 +71,18 @@ class TransPerm
     public static function getArrivalTimesVehicles(string $stoppointId)
     {
         return self::query(vsprintf(self::$endpoints['arrival-times-vehicles'], [$stoppointId, time()]));
+    }
+
+    /**
+     * Расписание движения транспорта по остановке
+     *
+     * @param string $date
+     * @param string $stoppointId
+     * @return array
+     */
+    public static function getStoppointTimeTable(string $date,string $stoppointId)
+    {
+        return self::query(vsprintf(self::$endpoints['stoppoint-time-table'], [$date, $stoppointId, time()]));
     }
 
     /**
