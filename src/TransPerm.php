@@ -27,7 +27,8 @@ class TransPerm
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
         'get-moving-autos'          => 'http://www.map.gortransperm.ru/json/get-moving-autos/-%s-?_=%s',
         'news-links'                => 'http://www.map.gortransperm.ru/json/news-links?_=%s',
-        'boards'                    => 'http://www.map.gortransperm.ru/json/boards'
+        'boards'                    => 'http://www.map.gortransperm.ru/json/boards',
+        'ticket-points'             => 'http://www.map.gortransperm.ru/json/ticket-points',
     ];
 
     /**
@@ -141,6 +142,16 @@ class TransPerm
     public static function getBoards()
     {
         return self::query(self::$endpoints['boards']);
+    }
+
+    /**
+     * Точки проездных
+     *
+     * @return array
+     */
+    public static function getTicketPoints()
+    {
+        return self::query(self::$endpoints['ticket-points']);
     }
 
     /**

@@ -20,6 +20,7 @@ PHP библиотека для получения расписания тран
     + [Поиск](#Поиск)
     + [Новости](#Новости)
     + [Табло](#Табло)
+    + [Точки проездных](#Точки проездных)
 3. [Автор](#Автор)
 4. [Лицензия](#Лицензия)
 
@@ -110,6 +111,8 @@ public static function getNews()
 ```php
 public static function getBoards()
 ```
+
+### Точки проездных
 
 ## Автор
 [Alexander Pushkarev](https://github.com/axp-dev), e-mail: [axp-dev@yandex.com](mailto:axp-dev@yandex.com)
