@@ -21,9 +21,9 @@ class TransPerm
         'route-types-tree'          => 'http://www.map.gortransperm.ru/json/route-types-tree/%s/',
         'full-route'                => 'http://www.map.gortransperm.ru/json/full-route/%s/%s/',
         'stoppoint-routes'          => 'http://www.map.gortransperm.ru/json/stoppoint-routes/%s/%s',
-        'arrival-times-vehicles'    => 'http://www.map.gortransperm.ru/json/arrival-times-vehicles/%d?_=%s',
-        'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%d?_=%s',
-        'time-table-h'              => 'http://www.map.gortransperm.ru/json/time-table-h/%s/%d/%d',
+        'arrival-times-vehicles'    => 'http://www.map.gortransperm.ru/json/arrival-times-vehicles/%s?_=%s',
+        'stoppoint-time-table'      => 'http://www.map.gortransperm.ru/json/stoppoint-time-table/%s?_=%s',
+        'time-table-h'              => 'http://www.map.gortransperm.ru/json/time-table-h/%s/%s/%s',
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
     ];
 
@@ -60,6 +60,17 @@ class TransPerm
     public static function getStoppointRoutes(string $date, string $stoppointId)
     {
         return self::query(vsprintf(self::$endpoints['stoppoint-routes'], [$date, $stoppointId]));
+    }
+
+    /**
+     * Ближайшие прибытия транспорта
+     *
+     * @param string $stoppointId
+     * @return array
+     */
+    public static function getArrivalTimesVehicles(string $stoppointId)
+    {
+        return self::query(vsprintf(self::$endpoints['arrival-times-vehicles'], [$stoppointId, time()]));
     }
 
     /**
