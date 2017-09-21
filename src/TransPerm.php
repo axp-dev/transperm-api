@@ -99,6 +99,17 @@ class TransPerm
     }
 
     /**
+     * Поиск
+     *
+     * @param string $query
+     * @return array
+     */
+    public static function search(string $query)
+    {
+        return self::query(vsprintf(self::$endpoints['search'], [$query]));
+    }
+
+    /**
      * HTTP запрос
      *
      * @param string $url
