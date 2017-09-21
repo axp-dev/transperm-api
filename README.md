@@ -113,6 +113,9 @@ public static function getBoards()
 ```
 
 ### Точки проездных
+```php
+public static function getTicketPoints()
+```
 
 ## Автор
 [Alexander Pushkarev](https://github.com/axp-dev), e-mail: [axp-dev@yandex.com](mailto:axp-dev@yandex.com)
