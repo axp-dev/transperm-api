@@ -27,6 +27,7 @@ class TransPerm
         'search'                    => 'http://www.map.gortransperm.ru/json/search?q=%s',
         'get-moving-autos'          => 'http://www.map.gortransperm.ru/json/get-moving-autos/-%s-?_=%s',
         'news-links'                => 'http://www.map.gortransperm.ru/json/news-links?_=%s',
+        'boards'                    => 'http://www.map.gortransperm.ru/json/boards'
     ];
 
     /**
@@ -130,6 +131,16 @@ class TransPerm
     public static function getNews()
     {
         return self::query(vsprintf(self::$endpoints['news-links'], [time()]));
+    }
+
+    /**
+     * Табло
+     *
+     * @return array
+     */
+    public static function getBoards()
+    {
+        return self::query(self::$endpoints['boards']);
     }
 
     /**
