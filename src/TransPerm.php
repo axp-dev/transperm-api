@@ -80,9 +80,22 @@ class TransPerm
      * @param string $stoppointId
      * @return array
      */
-    public static function getStoppointTimeTable(string $date,string $stoppointId)
+    public static function getStoppointTimeTable(string $date, string $stoppointId)
     {
         return self::query(vsprintf(self::$endpoints['stoppoint-time-table'], [$date, $stoppointId, time()]));
+    }
+
+    /**
+     * Расписание движения
+     *
+     * @param string $date
+     * @param string $routeId
+     * @param string $stoppointId
+     * @return array
+     */
+    public static function getTimeTableH(string $date, string $routeId, string $stoppointId)
+    {
+        return self::query(vsprintf(self::$endpoints['time-table-h'], [$date, $routeId, $stoppointId]));
     }
 
     /**
