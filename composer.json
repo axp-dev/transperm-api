@@ -1,0 +1,25 @@
+{
+  "name": "axp-dev/transperm-api",
+  "description": "PHP библиотека для получения расписания транспорта г. Перми",
+  "homepage": "https://github.com/axp-dev/transperm-api",
+  "keywords": ["transperm", "perm", "api"],
+  "version": "1.0.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Pushkarev",
+      "email": "axp-dev@yandex.com",
+      "homepage": "https://github.com/axp-dev"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "AXP\\TransPerm\\": "src"
+    }
+  },
+  "minimum-stability": "dev"
+}
